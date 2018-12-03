@@ -43,6 +43,10 @@ Route::group(['middleware' => 'auth'], function() {
     });
 });
 
+
+Route::redirect('/', '/products')->name('root');
+Route::get('products', 'ProductsController@index')->name('products.index');
+
 //Route::get('/aaa', function (){
 //
 //   //dd( Cache::put('bargain_create_source_log','111111'));
