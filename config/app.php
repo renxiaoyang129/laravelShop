@@ -42,7 +42,7 @@ return [
     'debug' => env('APP_DEBUG', false),
 
     /*
-    |--------------------------------------------------------------------------
+    |--------------------------------------------------------------------------fa
     | Application URL
     |--------------------------------------------------------------------------
     |
@@ -135,6 +135,8 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+
+    'faker_locale' => 'zh_CN',
 
     'providers' => [
 

@@ -35,3 +35,7 @@ Route::group(['middleware' => 'auth'], function() {
 //Route::get('bbb', function (){
 //  dd(Cache::get('bargain_create_source_log'));
 //});
+
+Route::group(['middleware' => 'email_verified'], function() {
+    Route::get('user_addresses', 'UserAddressesController@index')->name('user_addresses.index');
+});
