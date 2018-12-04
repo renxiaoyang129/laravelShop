@@ -44,6 +44,8 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('products/{product}favorite', 'productsController@favor')->name('products.favor');
         Route::delete('products/{product}/favorite', 'productsController@disfavor')->name('products.disfavor');
     });
+
+    Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');
 });
 
 
