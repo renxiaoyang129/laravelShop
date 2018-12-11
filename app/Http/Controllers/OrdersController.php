@@ -13,7 +13,20 @@ use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {
-    //
+    public function index(Request $request)
+    {
+       $orders = Order::query()
+           //使用with方法进行预加载 避免n+1
+           ->with(['items.product', 'items.productSku'])
+           ->where('user_id', $request->user()->id)
+           ->orderBy('created_at', 'desc')
+           ->paginate();
+//dd($orders);
+       return view('orders.index', ['orders'=>$orders]);
+    }
+
+
+    //下订单
     public function store(OrderRequest $request)
     {
         $user  = $request->user();
