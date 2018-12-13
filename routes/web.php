@@ -69,6 +69,15 @@ Route::get('products', 'ProductsController@index')->name('products.index');
 Route::get('products/{product}', 'ProductsController@show')->name('products.show');
 
 
+
+
+Route::get('alipay', function() {
+    return app('alipay')->web([
+        'out_trade_no' => time(),
+        'total_amount' => '1',
+        'subject' => 'test subject - 测试',
+    ]);
+});
 //Route::get('/aaa', function (){
 //
 //   //dd( Cache::put('bargain_create_source_log','111111'));
