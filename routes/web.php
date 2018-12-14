@@ -65,6 +65,11 @@ Route::group(['middleware' => 'auth'], function() {
         //收货
         Route::post('orders/{order}/received', 'OrdersController@received')->name('orders.received');
 
+        //评价
+        Route::get('orders/{order}/review', 'OrdersController@review')->name('orders.review.show');
+        Route::post('orders/{order}/review', 'OrdersController@sendReview')->name('orders.review.store');
+
+
     });
 
     Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');

@@ -39,7 +39,7 @@ class PaymentController extends Controller
             return view('pages.error', ['msg' => '数据不正确']);
 
         }
-        return view('pages', ['msg' => '付款成功']);
+        return view('pages.success', ['msg' => '付款成功']);
 //        $data = app('alipay')->verify();
 //        dd($data);
 
